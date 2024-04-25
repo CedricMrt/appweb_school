@@ -1,0 +1,153 @@
+body {
+  background-image: url(./img/Hogwarts_Background.webp);
+}
+
+main {
+  height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.niffleur {
+  position: absolute;
+  left: 1rem;
+  bottom: -1rem;
+}
+
+.niffleurImg.active,
+.bubble.active {
+  transform: translateX(0rem);
+}
+
+.niffleurImg {
+  width: 50%;
+  transform: translateX(-30rem);
+  transition: all 0.3s ease-in-out;
+}
+
+.bubble {
+  position: absolute;
+  left: 150px;
+  bottom: 135px;
+  width: 270px;
+  padding: 50px 40px;
+  margin: 1em auto 80px;
+  text-align: center;
+  color: #fff;
+  background: rgba(85, 95, 103, 0.69);
+  border-radius: 220px / 140px;
+  box-shadow: -5px -5px 10px 0px rgba(255, 255, 255, 0.5),
+    5px 5px 10px 0px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  transform: translateX(-30rem);
+}
+
+.bubble::before {
+  content: "";
+  position: absolute;
+  bottom: -20px;
+  left: 50px;
+  width: 30px;
+  height: 30px;
+  background: rgba(85, 95, 103, 0.69);
+  border-radius: 30px;
+  box-shadow: -5px -5px 10px 0px rgba(255, 255, 255, 0.5),
+    5px 5px 10px 0px rgba(0, 0, 0, 0.3);
+}
+
+.bubble::after {
+  content: "";
+  position: absolute;
+  bottom: -30px;
+  left: 30px;
+  width: 15px;
+  height: 15px;
+  background: rgba(85, 95, 103, 0.69);
+  border-radius: 15px;
+  box-shadow: -5px -5px 10px 0px rgba(255, 255, 255, 0.5),
+    5px 5px 10px 0px rgba(0, 0, 0, 0.3);
+}
+
+.bubble__text {
+  font-size: 1.3rem;
+  letter-spacing: 1px;
+}
+
+.box-outer {
+  position: relative;
+  width: 50%;
+  border: 2px solid #9d523c;
+  transform: scale(0);
+  transition: all 0.3s ease-in-out;
+}
+
+.box-outer.active {
+  transform: scale(1);
+}
+
+.activityChoice {
+  margin: 0.4rem;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+  border: 2px solid #f2a65a;
+  background-color: rgba(0, 0, 0, 0.527);
+}
+
+.activityChoice:before,
+.activityChoice:after {
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 14px;
+
+  border: 2px solid #f2a65a;
+
+  top: 6px;
+}
+.activityChoice:before {
+  left: 6px;
+}
+.activityChoice:after {
+  right: 6px;
+}
+.box-outer {
+  position: relative;
+  border: 2px solid #f2a65a;
+}
+.box-outer:before,
+.box-outer:after {
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 14px;
+
+  border: 2px solid #f2a65a;
+
+  bottom: 6px;
+}
+.box-outer:before {
+  left: 6px;
+}
+.box-outer:after {
+  right: 6px;
+}
+
+.activity {
+  width: 50%;
+  background: linear-gradient(315deg, #9d523c 0%, #f2a65a 74%);
+  border: 2px solid #9d523c;
+  padding: 2rem 3rem;
+  border-radius: 50px;
+  text-decoration: none;
+  text-align: center;
+  color: #ffd700;
+  font-size: 2rem;
+  text-shadow: 4px 0px 3px rgba(0, 0, 0, 0.8);
+  cursor: pointer;
+}
