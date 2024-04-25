@@ -1,5 +1,5 @@
 body {
-  background-image: url(./img/Hogwarts_Background.webp);
+  background: no-repeat center/cover url(./img/Hogwarts_Background.webp);
 }
 
 main {
@@ -43,6 +43,7 @@ main {
   display: flex;
   align-items: center;
   transform: translateX(-30rem);
+  z-index: 99;
 }
 
 .bubble::before {
@@ -117,6 +118,7 @@ main {
   right: 6px;
 }
 .box-outer {
+  min-width: 18rem;
   position: relative;
   border: 2px solid #f2a65a;
 }
@@ -139,7 +141,7 @@ main {
 }
 
 .activity {
-  width: 50%;
+  width: clamp(16rem, 70%, 80%);
   background: linear-gradient(315deg, #9d523c 0%, #f2a65a 74%);
   border: 2px solid #9d523c;
   padding: 2rem 3rem;

@@ -13,4 +13,5 @@ setInterval(function () {
 
 setInterval(function () {
   bubbleElement.remove();
+  niffleurImg.style.transform = "translateX(-30rem)";
 }, 12000);
