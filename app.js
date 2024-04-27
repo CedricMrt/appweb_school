@@ -1,17 +1,22 @@
-const niffleurImg = document.querySelector(".niffleurImg");
-const bubbleElement = document.querySelector(".bubble");
-const activityBox = document.querySelector(".box-outer");
+const project = {
+  niffleurParentElement: document.querySelector(".niffleur"),
+  niffleurImg: document.querySelector(".niffleurImg"),
+  bubbleElement: document.querySelector(".bubble"),
+  activityBox: document.querySelector("#box-outer"),
 
-setInterval(function () {
-  niffleurImg.classList.add("active");
-}, 2500);
+  init: function () {
+    setTimeout(function () {
+      project.niffleurImg.classList.add("active");
+    }, 1500);
 
-setInterval(function () {
-  bubbleElement.classList.add("active");
-  activityBox.classList.add("active");
-}, 3500);
+    setTimeout(function () {
+      project.bubbleElement.classList.add("active");
+      project.activityBox.classList.add("active");
+    }, 3000);
 
-setInterval(function () {
-  bubbleElement.remove();
-  niffleurImg.style.transform = "translateX(-30rem)";
-}, 12000);
+    setTimeout(function () {
+      project.bubbleElement.classList.remove("active");
+    }, 12000);
+  },
+};
+project.init();

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/math.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <nav class="navbar">
+          <div class="nav__logo">
+            <img
+              src="../img/logo 4 maisons.png"
+              alt="logo des 4 maisons harry potter"
+            />
+          </div>
+          <div class="container">
+            <h1>Multiplication Table Game</h1>
+            <div class="admin-panel hidden" id="adminPanel">
+              <input type="password" id="password" placeholder="Enter pass" />
+              <button onclick="authenticateAdmin()">Submit</button>
+              <div class="selectInput">
+                <label for="multiplication-table"
+                  >Choose multiplication tables:</label
+                >
+                <select id="multiplication-table" multiple>
+                  <option value="1">Table de multiplication de 1</option>
+                  <option value="2" selected>
+                    Table de multiplication de 2
+                  </option>
+                  <option value="3">Table de multiplication de 3</option>
+                  <option value="4">Table de multiplication de 4</option>
+                  <option value="5" selected>
+                    Table de multiplication de 5
+                  </option>
+                  <option value="6">Table de multiplication de 6</option>
+                  <option value="7">Table de multiplication de 7</option>
+                  <option value="8">Table de multiplication de 8</option>
+                  <option value="9">Table de multiplication de 9</option>
+                  <option value="10" selected>
+                    Table de multiplication de 10
+                  </option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </header>
+      <main>
+        <div class="niffleur">
+          <img
+            class="niffleurImg"
+            src="../img/niffleur.png"
+            alt="image du niffleur"
+          />
+        </div>
+        <div class="bubble">
+          <p class="bubble__text">
+            Bonjour, et si on faisait des mathématiques ?
+          </p>
+        </div>
+        <div id="box-outer">
+          <div class="game-panel hidden" id="gamePanel">
+            <div id="question"></div>
+            <div id="options"></div>
+            <div id="feedback"></div>
+          </div>
+        </div>
+      </main>
+      <footer>
+        <p class="footer">© 2024 L'école Chavernac website make by</p>
+        <a href="#" class="logoLink"
+          ><img src="../img/logo-cm.png" alt="logo createur du site"
+        /></a>
+      </footer>
+    </div>
+
+    <script src="../app.js"></script>
+    <script src="../js/math.js"></script>
+  </body>
+</html>

@@ -4,35 +4,54 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="reset.css" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
-    <header><nav></nav></header>
-    <main>
-      <div class="niffleur">
-        <img
-          class="niffleurImg"
-          src="./img/niffleur.png"
-          alt="image du niffleur"
-        />
+    <div class="wrapper">
+      <header>
+        <nav>
+          <div class="nav__logo">
+            <img
+              src="./img/logo 4 maisons.png"
+              alt="logo des 4 maisons harry potter"
+            />
+          </div>
+        </nav>
+      </header>
+      <main>
+        <div class="niffleur">
+          <img
+            class="niffleurImg"
+            src="./img/niffleur.png"
+            alt="image du niffleur"
+          />
+        </div>
         <div class="bubble">
           <p class="bubble__text">
             Bonjour, que veux tu faire avec moi aujourd'hui ?
           </p>
         </div>
-      </div>
-      <div class="box-outer">
-        <div class="activityChoice">
-          <a href="" class="activity">Français</a>
-          <a href="" class="activity">Math</a>
-          <a href="" class="activity">Anglais</a>
-          <a href="" class="activity">Découverte du monde</a>
-          <a href="" class="activity">Harry Potter</a>
+        <div class="box-outer" id="box-outer">
+          <div class="activityChoice">
+            <a href="./pages html/français.html" class="activity">Français</a>
+            <a href="./pages html/math.html" class="activity">Math</a>
+            <a href="./pages html/anglais.html" class="activity">Anglais</a>
+            <a href="./pages html/decouverte.html" class="activity"
+              >Découverte du monde</a
+            >
+            <a href="./pages html/hp.html" class="activity">Harry Potter</a>
+          </div>
         </div>
-      </div>
-    </main>
-    <footer><p class="footer"></p></footer>
+      </main>
+      <footer>
+        <p class="footer">
+          © 2024 L'école Chavernac website make by
+          <a href="#" class="logoLink"
+            ><img src="./img/logo-cm.png" alt="logo createur du site"
+          /></a>
+        </p>
+      </footer>
+    </div>
 
     <script src="app.js"></script>
   </body>

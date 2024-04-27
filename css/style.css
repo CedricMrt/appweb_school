@@ -1,19 +1,40 @@
-body {
-  background: no-repeat center/cover url(./img/Hogwarts_Background.webp);
+*,
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.wrapper {
+  min-height: 100vh;
+  background: no-repeat center/cover url(../img/Hogwarts_Background.webp);
+}
+
+header {
+  height: 113px;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.651);
+  display: flex;
+  align-items: center;
+  z-index: 99;
+}
+
+.nav__logo img {
+  width: 4rem;
+  margin: 0.5rem;
 }
 
 main {
-  height: 100vh;
-  position: relative;
+  padding: 1rem 0;
+  margin: 0 2rem;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
-}
-
-.niffleur {
-  position: absolute;
-  left: 1rem;
-  bottom: -1rem;
 }
 
 .niffleurImg.active,
@@ -22,27 +43,28 @@ main {
 }
 
 .niffleurImg {
-  width: 50%;
-  transform: translateX(-30rem);
+  position: absolute;
+  width: 15rem;
+  left: 5px;
+  bottom: 45px;
+  transform: translateX(-50rem);
   transition: all 0.3s ease-in-out;
+  z-index: 98;
 }
 
 .bubble {
   position: absolute;
   left: 150px;
-  bottom: 135px;
+  bottom: 225px;
   width: 270px;
-  padding: 50px 40px;
-  margin: 1em auto 80px;
+  padding: 3rem 2rem;
   text-align: center;
   color: #fff;
   background: rgba(85, 95, 103, 0.69);
   border-radius: 220px / 140px;
   box-shadow: -5px -5px 10px 0px rgba(255, 255, 255, 0.5),
     5px 5px 10px 0px rgba(0, 0, 0, 0.3);
-  display: flex;
-  align-items: center;
-  transform: translateX(-30rem);
+  transform: translateX(-50rem);
   z-index: 99;
 }
 
@@ -109,10 +131,10 @@ main {
 
   border: 2px solid #f2a65a;
 
-  top: 6px;
+  top: 7px;
 }
 .activityChoice:before {
-  left: 6px;
+  left: 7px;
 }
 .activityChoice:after {
   right: 6px;
@@ -134,7 +156,7 @@ main {
   bottom: 6px;
 }
 .box-outer:before {
-  left: 6px;
+  left: 7px;
 }
 .box-outer:after {
   right: 6px;
@@ -144,7 +166,7 @@ main {
   width: clamp(16rem, 70%, 80%);
   background: linear-gradient(315deg, #9d523c 0%, #f2a65a 74%);
   border: 2px solid #9d523c;
-  padding: 2rem 3rem;
+  padding: 0.5rem 1rem;
   border-radius: 50px;
   text-decoration: none;
   text-align: center;
@@ -152,4 +174,33 @@ main {
   font-size: 2rem;
   text-shadow: 4px 0px 3px rgba(0, 0, 0, 0.8);
   cursor: pointer;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.192);
+  font-size: 0.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer img {
+  width: 2.5rem;
+}
+
+@media (max-width: 880px) {
+  .niffleurImg {
+    width: 8rem;
+  }
+  .bubble {
+    left: 70px;
+    bottom: 155px;
+    width: 150px;
+    padding: 1.5rem 0.5rem;
+    border-radius: 230px;
+  }
 }
