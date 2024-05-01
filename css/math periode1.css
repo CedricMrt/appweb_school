@@ -220,8 +220,15 @@ li {
   margin-bottom: 1rem;
 }
 
+.calculation {
+  display: flex;
+  flex-direction: column;
+  min-height: 12rem;
+}
+
 .numbers span,
-.symbols div {
+.symbols div,
+.calculation div {
   height: 3rem;
   width: 3rem;
   border-radius: 25px;

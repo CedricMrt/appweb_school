@@ -104,10 +104,33 @@
             <button class="button" id="validate2">Valider</button>
           </div>
 
-          <!-- Ajout pour l'activité 3 -->
           <div id="activity3Controls" style="display: none">
-            <!-- Options spécifiques à l'activité 3 -->
+            <div class="options">
+              <label for="difficulty3">Difficulté:</label>
+              <select id="difficulty3">
+                <option value="facile">Facile</option>
+                <option value="moyen">Moyen</option>
+                <option value="difficile">Difficile</option>
+              </select>
+
+              <label for="operation">Opération:</label>
+              <select id="operation">
+                <option value="addition">Addition</option>
+                <option value="soustraction">Soustraction</option>
+              </select>
+            </div>
             <button id="startActivity3">Lancer Activité 3</button>
+          </div>
+
+          <div class="calculation" style="display: none">
+            <div id="numbers1"></div>
+            <div id="operationSymbol"></div>
+            <div id="numbers2"></div>
+
+            <label for="userAnswer">Votre réponse:</label>
+            <input type="number" id="userAnswer" />
+            <button id="validate3">Valider</button>
+            <span class="result3"></span>
           </div>
 
           <!-- Ajout pour l'activité 4 -->

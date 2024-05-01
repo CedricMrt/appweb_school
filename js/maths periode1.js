@@ -1,9 +1,10 @@
 $(document).ready(function () {
   let selectedDifficulty, selectedOrder, selectedDifficulty2;
-  let maxNumber = 5;
   let sortableInitialized = false;
   let activity1IsRunning = false;
   let activity2IsRunning = false;
+  let selectedDifficulty3, selectedOperation;
+  let activity3IsRunning = false;
 
   // Événement de clic sur les activités
   $(".activity").on("click", function () {
@@ -16,6 +17,9 @@ $(document).ready(function () {
       case "activity2":
         showActivity2Controls();
         break;
+      case "activity3":
+        showActivity3Controls();
+        break;
       default:
         console.log("Activité non reconnue");
     }
@@ -24,11 +28,13 @@ $(document).ready(function () {
   // Fonction pour afficher les contrôles de l'activité 1
   function showActivityControls() {
     $("#activityControls").show();
-    $("#activity2Controls").hide(); // Cache les contrôles de l'activité 2
+    $("#activity2Controls").hide();
+    $("#activity3Controls").hide(); // Cache les contrôles de l'activité 2
     $(".sortable-list").hide();
     $(".comparison-activity").hide();
     activity1IsRunning = true;
     activity2IsRunning = false;
+    activity3IsRunning = false;
     sortableInitialized = false;
   }
 
@@ -36,10 +42,12 @@ $(document).ready(function () {
   function showActivity2Controls() {
     $("#activityControls").hide(); // Cache les contrôles de l'activité 1
     $("#activity2Controls").show();
+    $("#activity3Controls").hide();
     $(".sortable-list").hide();
     $(".comparison-activity").hide();
     activity1IsRunning = false;
     activity2IsRunning = true;
+    activity3IsRunning = false;
   }
 
   // Fonction pour démarrer l'activité de classement des nombres
@@ -148,7 +156,7 @@ $(document).ready(function () {
         ? 20
         : selectedDifficulty2 === "moyen"
         ? 60
-        : 90;
+        : 70;
 
     const number1 = Math.floor(Math.random() * (maxRange + 1));
     const number2 = Math.floor(Math.random() * (maxRange + 1));
@@ -249,7 +257,7 @@ $(document).ready(function () {
         ? 20
         : selectedDifficulty2 === "moyen"
         ? 60
-        : 90;
+        : 70;
     const number1 = Math.floor(Math.random() * (maxRange + 1));
     const number2 = Math.floor(Math.random() * (maxRange + 1));
 
@@ -257,3 +265,114 @@ $(document).ready(function () {
     $("#number2").text(number2);
   }
 });
+
+function regenerateActivity3List() {
+  const maxRange =
+    selectedDifficulty3 === "facile"
+      ? 20
+      : selectedDifficulty3 === "moyen"
+      ? 60
+      : 70;
+
+  const number1 = Math.floor(Math.random() * maxRange) + 1;
+  const number2 = Math.floor(Math.random() * maxRange) + 1;
+  // Trie les nombres dans l'ordre décroissant
+  const sortedNumbers = [number1, number2].sort((a, b) => b - a);
+  const sortedNumber1 = sortedNumbers[0];
+  const sortedNumber2 = sortedNumbers[1];
+
+  // Affichage de la question
+  $("#numbers1").text(sortedNumber1);
+  $("#numbers2").text(sortedNumber2);
+  $("#operationSymbol").text(selectedOperation === "addition" ? "+" : "-");
+  $(".calculation").show();
+  $("#userAnswer").val("");
+}
+
+// activité 3
+
+// Fonction pour afficher les contrôles de l'activité 3
+function showActivity3Controls() {
+  $("#activityControls").hide();
+  $("#activity2Controls").hide();
+  $("#activity3Controls").show();
+  $("#activity4Controls").hide();
+  $(".sortable-list").hide();
+  $(".comparison-activity").hide();
+  $(".calculation").hide();
+  activity3IsRunning = true;
+}
+
+// Fonction pour démarrer l'activité 3
+$("#startActivity3").on("click", function () {
+  selectedDifficulty3 = $("#difficulty3").val();
+  selectedOperation = $("#operation").val();
+
+  const maxRange =
+    selectedDifficulty3 === "facile"
+      ? 20
+      : selectedDifficulty3 === "moyen"
+      ? 60
+      : 70;
+
+  const number1 = Math.floor(Math.random() * maxRange) + 1;
+  const number2 = Math.floor(Math.random() * maxRange) + 1;
+  // Trie les nombres dans l'ordre décroissant
+  const sortedNumbers = [number1, number2].sort((a, b) => b - a);
+  const sortedNumber1 = sortedNumbers[0];
+  const sortedNumber2 = sortedNumbers[1];
+
+  // Affichage de la question
+  $("#numbers1").text(sortedNumber1);
+  $("#numbers2").text(sortedNumber2);
+  $("#operationSymbol").text(selectedOperation === "addition" ? "+" : "-");
+  $(".calculation").show();
+  showResultMessage(""); // Efface tout message précédent
+});
+
+// Événement pour valider la réponse
+$("#validate3").on("click", function () {
+  const number1 = parseInt($("#numbers1").text());
+  const number2 = parseInt($("#numbers2").text());
+  const userAnswer = parseInt($("#userAnswer").val());
+
+  let correctAnswer;
+  if (selectedOperation === "addition") {
+    correctAnswer = number1 + number2;
+  } else {
+    correctAnswer = Math.abs(number1 - number2);
+  }
+
+  if (userAnswer === correctAnswer) {
+    showResultMessage("Bravo !");
+    regenerateActivity3List();
+  } else {
+    showResultMessage("Désolé, mauvaise réponse.");
+  }
+});
+
+// Fonction pour afficher un message de résultat
+function showResultMessage(message) {
+  $(".result3").text(message);
+}
+
+// Événement pour détecter le changement de difficulté pour l'activité 3
+$("#difficulty3").on("change", function () {
+  selectedDifficulty3 = $(this).val();
+  if (activity3IsRunning) {
+    regenerateActivity3List();
+    // Vérifie si l'activité 3 est en cours
+    // Vous pouvez ajouter du code ici pour régénérer les nombres avec la nouvelle difficulté si nécessaire
+  }
+});
+
+$("#operation").on("change", function () {
+  selectedOperation = $(this).val();
+  if (activity3IsRunning) {
+    regenerateActivity3List();
+    // Vérifie si l'activité 3 est en cours
+    // Vous pouvez ajouter du code ici pour régénérer les nombres avec la nouvelle difficulté si nécessaire
+  }
+});
+
+// Autres fonctions et événements...
