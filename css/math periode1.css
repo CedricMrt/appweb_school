@@ -1,0 +1,256 @@
+/* style.css html body footer */
+*,
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  background: no-repeat center/cover url(../img/Hogwarts_Background.webp);
+}
+
+.wrapper {
+  height: calc(100% - 50px);
+  overflow: auto;
+}
+
+header {
+  height: 5rem;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.651);
+  display: flex;
+  align-items: center;
+  z-index: 99;
+}
+
+.navbar h1 {
+  margin-left: 35%;
+  color: #c6d5ad;
+  font-size: 2rem;
+}
+
+.nav__logo img {
+  width: 4rem;
+  margin: 0.5rem;
+}
+
+main {
+  padding: 3rem 0;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+footer {
+  height: 48px;
+  width: 100%;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.192);
+  font-size: 0.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer img {
+  width: 2.5rem;
+}
+
+/* ############ style activité 1 ############ */
+
+.activities {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.activityDescription {
+  height: 14rem;
+  max-width: 9rem;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+  color: rgb(219, 209, 211);
+  background-color: rgba(0, 0, 0, 0.521);
+}
+
+.activity {
+  height: 8rem;
+  width: 7rem;
+  margin-top: 0.5rem;
+  cursor: pointer;
+  border-radius: 10px;
+  overflow: hidden;
+  background: no-repeat center/cover;
+  box-shadow: -5px -5px 10px 0px rgba(255, 255, 255, 0.5),
+    5px 5px 10px 5px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease-in-out;
+  border: 2px solid black;
+  text-align: center;
+  text-shadow: 4px 5px 5px rgba(0, 0, 0, 0.8);
+}
+
+#activity1 {
+  background-image: url(../img/griffondor.png);
+}
+#activity2 {
+  background-image: url(../img/poufsouffle.png);
+}
+#activity3 {
+  background-image: url(../img/serdaigle.png);
+}
+#activity4 {
+  background-image: url(../img/serpentar.png);
+}
+
+.activity:hover {
+  transform: translateY(-5px);
+}
+
+#box-outer {
+  height: 38rem;
+  min-width: 30rem;
+  margin-bottom: 1rem;
+  margin-right: 1rem;
+  background: no-repeat center/contain url(../img/livre_ouvert.png);
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.options {
+  margin-bottom: 1rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+select {
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: 2px solid #9d523c;
+  background: linear-gradient(315deg, #9d523c 0%, #f2a65a 74%);
+}
+
+select:focus {
+  outline: none;
+}
+
+#activityControls {
+  max-width: 12rem;
+  margin-left: 2rem;
+}
+
+.sortable-list {
+  padding: 2rem;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  width: 12rem;
+}
+
+li {
+  width: 100%;
+  align-self: center;
+  background: linear-gradient(315deg, #9d523c 0%, #f2a65a 74%);
+  border: 2px solid #9d523c;
+  padding: 0.5rem;
+  border-radius: 50px;
+  text-align: center;
+  color: #ffd700;
+  font-size: 1.2rem;
+  text-shadow: 4px 0px 3px rgba(0, 0, 0, 0.8);
+  margin-bottom: 0.3rem;
+  cursor: pointer;
+}
+
+.result {
+  margin-top: 0.6rem;
+  font-weight: bold;
+}
+
+.button {
+  padding: 0.8rem 1.2rem;
+  background-color: #c6d5ad;
+  border: 2px solid #9d523c;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.button:hover {
+  background-color: #99a784;
+  transform: translateY(1px);
+}
+
+/* ############ style activité 2 ############### */
+
+#activity2Controls {
+  max-width: 12rem;
+  margin-left: 2rem;
+}
+
+.comparison-activity {
+  width: 12rem;
+}
+
+.numbers,
+.symbols {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 1rem;
+}
+
+.numbers span,
+.symbols div {
+  height: 3rem;
+  width: 3rem;
+  border-radius: 25px;
+  background: linear-gradient(315deg, #9d523c 0%, #f2a65a 74%);
+  border: 2px solid #9d523c;
+  padding: 0.5rem;
+  text-align: center;
+  color: #ffd700;
+  font-size: 1.2rem;
+  text-shadow: 4px 0px 3px rgba(0, 0, 0, 0.8);
+  margin-bottom: 0.3rem;
+  cursor: pointer;
+}
+
+.result2 {
+  margin-bottom: 0.6rem;
+  font-weight: bold;
+}
+
+/* ############ media queries ############# */
+
+@media (max-width: 750px) {
+  main {
+    display: block;
+  }
+
+  #box-outer {
+    max-height: 24rem;
+    justify-content: center;
+    margin-bottom: 5rem;
+  }
+}

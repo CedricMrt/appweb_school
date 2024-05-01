@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Activités</title>
+    <link
+      rel="shortcut icon"
+      href="../img/ico harry-potter.png"
+      type="image/x-icon"
+    />
+    <link
+      rel="stylesheet"
+      href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
+    />
+    <link rel="stylesheet" href="../css/math periode1.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <nav class="navbar">
+          <div class="nav__logo">
+            <img
+              src="../img/logo 4 maisons.png"
+              alt="logo des 4 maisons harry potter"
+            />
+          </div>
+          <h1 class="nav__title">Mathématiques Période 1</h1>
+        </nav>
+      </header>
+      <main>
+        <div class="activities">
+          <div class="activityDescription">
+            <p>classer les nombres du plus grand au plus petit ou l'inverse</p>
+            <div class="activity" id="activity1"></div>
+          </div>
+          <div class="activityDescription">
+            <p>Indiquer si les nombres sont inferieur, egal ou supérieur</p>
+            <div class="activity" id="activity2"></div>
+          </div>
+          <div class="activityDescription">
+            <p>classer les nombres</p>
+            <div class="activity" id="activity3"></div>
+          </div>
+          <div class="activityDescription">
+            <p>classer les nombres</p>
+            <div class="activity" id="activity4"></div>
+          </div>
+        </div>
+
+        <div id="box-outer">
+          <div id="activityControls" style="display: none">
+            <div class="options">
+              <label for="difficulty">Difficulté:</label>
+              <select id="difficulty">
+                <option value="facile">Facile</option>
+                <option value="moyen">Moyen</option>
+                <option value="difficile">Difficile</option>
+              </select>
+
+              <label for="order">Ordre:</label>
+              <select id="order">
+                <option value="croissant">Croissant</option>
+                <option value="decroissant">Décroissant</option>
+              </select>
+            </div>
+            <button class="button" id="startActivity">Lancer</button>
+            <div class="result"></div>
+          </div>
+
+          <div class="sortable-list" style="display: none">
+            <ul id="sortable" class="draggable-container">
+              <!-- Liste générée dynamiquement -->
+            </ul>
+
+            <button class="button" id="validate">Valider</button>
+          </div>
+
+          <div id="activity2Controls" style="display: none">
+            <div class="options">
+              <label for="difficulty2">Difficulté:</label>
+              <select id="difficulty2">
+                <option value="facile">Facile</option>
+                <option value="moyen">Moyen</option>
+                <option value="difficile">Difficile</option>
+              </select>
+            </div>
+
+            <button class="button" id="startActivity2">Lancer</button>
+          </div>
+
+          <div class="comparison-activity" style="display: none">
+            <div class="numbers">
+              <span id="number1"></span>
+              <span id="comparisonSymbol" class="ui-droppable"></span>
+              <span id="number2"></span>
+            </div>
+            <div class="symbols" id="drag-container">
+              <div id="greaterThan" class="ui-draggable">&gt;</div>
+              <div id="equalTo" class="ui-draggable">=</div>
+              <div id="lessThan" class="ui-draggable">&lt;</div>
+            </div>
+            <div class="result2"></div>
+            <button class="button" id="validate2">Valider</button>
+          </div>
+
+          <!-- Ajout pour l'activité 3 -->
+          <div id="activity3Controls" style="display: none">
+            <!-- Options spécifiques à l'activité 3 -->
+            <button id="startActivity3">Lancer Activité 3</button>
+          </div>
+
+          <!-- Ajout pour l'activité 4 -->
+          <div id="activity4Controls" style="display: none">
+            <!-- Options spécifiques à l'activité 4 -->
+            <button id="startActivity4">Lancer Activité 4</button>
+          </div>
+        </div>
+      </main>
+    </div>
+    <footer>
+      <p class="footer">© 2024 L'école Chavernac website make by</p>
+      <a href="#" class="logoLink"
+        ><img src="../img/logo-cm.png" alt="logo createur du site"
+      /></a>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="../js/maths periode1.js"></script>
+  </body>
+</html>
