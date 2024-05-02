@@ -2,6 +2,7 @@ $(document).ready(function () {
   let selectedDifficulty, selectedOrder, selectedDifficulty2;
   let sortableInitialized = false;
   let activity1IsRunning = false;
+  let maxNumber = 5;
   let activity2IsRunning = false;
   let selectedDifficulty3, selectedOperation;
   let activity3IsRunning = false;
@@ -32,6 +33,7 @@ $(document).ready(function () {
     $("#activity3Controls").hide(); // Cache les contrôles de l'activité 2
     $(".sortable-list").hide();
     $(".comparison-activity").hide();
+    $(".calculation").hide();
     activity1IsRunning = true;
     activity2IsRunning = false;
     activity3IsRunning = false;
@@ -45,13 +47,26 @@ $(document).ready(function () {
     $("#activity3Controls").hide();
     $(".sortable-list").hide();
     $(".comparison-activity").hide();
+    $(".calculation").hide();
     activity1IsRunning = false;
     activity2IsRunning = true;
     activity3IsRunning = false;
   }
 
+  // Fonction pour afficher les contrôles de l'activité 3
+  function showActivity3Controls() {
+    $("#activityControls").hide();
+    $("#activity2Controls").hide();
+    $("#activity3Controls").show();
+    $("#activity4Controls").hide();
+    $(".sortable-list").hide();
+    $(".comparison-activity").hide();
+    $(".calculation").hide();
+    activity3IsRunning = true;
+  }
+
   // Fonction pour démarrer l'activité de classement des nombres
-  $("#startActivity").on("click", function () {
+  $("#startActivity1").on("click", function () {
     selectedDifficulty = $("#difficulty").val();
     selectedOrder = $("#order").val();
 
@@ -63,9 +78,9 @@ $(document).ready(function () {
         : 70;
     const numbers = generateNumbers(maxNumber, 0, maxRange);
 
-    let message = `Classe les nombres dans l'ordre ${selectedOrder} en les faisant glisser.`;
+    let message1 = `Classe les nombres dans l'ordre ${selectedOrder} en les faisant glisser.`;
 
-    showSortableDialog(numbers, message);
+    showSortableDialog(numbers, message1);
   });
 
   // Gestionnaire d'événement pour le bouton Valider
@@ -88,9 +103,9 @@ $(document).ready(function () {
             : 70;
         const numbers = generateNumbers(maxNumber, 0, maxRange);
 
-        let message = `Classe les nombres dans l'ordre ${selectedOrder} en les faisant glisser.`;
+        let message1 = `Classe les nombres dans l'ordre ${selectedOrder} en les faisant glisser.`;
 
-        showSortableDialog(numbers, message);
+        showSortableDialog(numbers, message1);
       }, 1000);
     } else {
       $(".result").text(
@@ -100,7 +115,7 @@ $(document).ready(function () {
   });
 
   // Fonction pour afficher la boîte de dialogue pour classer les nombres
-  function showSortableDialog(numbers, message) {
+  function showSortableDialog(numbers, message1) {
     $("#sortable").empty();
 
     numbers.forEach((num) => {
@@ -108,7 +123,7 @@ $(document).ready(function () {
       $("#sortable").append(item);
     });
 
-    $(".result").text(message);
+    $(".result").text(message1);
 
     $(".sortable-list").show();
     if (!sortableInitialized) {
@@ -246,9 +261,9 @@ $(document).ready(function () {
         : 70;
     const numbers = generateNumbers(maxNumber, 0, maxRange);
 
-    let message = `Classe les nombres dans l'ordre ${selectedOrder} en les faisant glisser.`;
+    let message1 = `Classe les nombres dans l'ordre ${selectedOrder} en les faisant glisser.`;
 
-    showSortableDialog(numbers, message);
+    showSortableDialog(numbers, message1);
   }
 
   function regenerateActivity2List() {
@@ -290,18 +305,6 @@ function regenerateActivity3List() {
 }
 
 // activité 3
-
-// Fonction pour afficher les contrôles de l'activité 3
-function showActivity3Controls() {
-  $("#activityControls").hide();
-  $("#activity2Controls").hide();
-  $("#activity3Controls").show();
-  $("#activity4Controls").hide();
-  $(".sortable-list").hide();
-  $(".comparison-activity").hide();
-  $(".calculation").hide();
-  activity3IsRunning = true;
-}
 
 // Fonction pour démarrer l'activité 3
 $("#startActivity3").on("click", function () {
@@ -352,8 +355,8 @@ $("#validate3").on("click", function () {
 });
 
 // Fonction pour afficher un message de résultat
-function showResultMessage(message) {
-  $(".result3").text(message);
+function showResultMessage(message3) {
+  $(".result3").text(message3);
 }
 
 // Événement pour détecter le changement de difficulté pour l'activité 3
