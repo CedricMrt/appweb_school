@@ -271,6 +271,11 @@ li {
 
 @media (max-width: 500px) {
   #box-outer {
+    max-height: 22rem;
     min-width: 20rem;
+  }
+
+  .activityChoice {
+    padding: 1rem;
   }
 }
