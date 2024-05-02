@@ -163,7 +163,7 @@ main {
 }
 
 .activity {
-  width: clamp(16rem, 70%, 80%);
+  width: clamp(12rem, 70%, 80%);
   background: linear-gradient(315deg, #9d523c 0%, #f2a65a 74%);
   border: 2px solid #9d523c;
   padding: 0.5rem 1rem;
@@ -202,5 +202,12 @@ footer img {
     width: 150px;
     padding: 1.5rem 0.5rem;
     border-radius: 230px;
+  }
+}
+
+@media (max-width: 550px) {
+  .activity {
+    padding: 0 1rem;
+    font-size: 1.5rem;
   }
 }

@@ -25,15 +25,22 @@ header {
   top: 0;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.651);
+  padding: 0 2rem;
   display: flex;
+  justify-content: space-between;
   align-items: center;
   z-index: 99;
 }
 
 .navbar h1 {
-  margin-left: 35%;
   color: #c6d5ad;
   font-size: 2rem;
+}
+
+.navbar a {
+  text-decoration: none;
+  font-size: 1.5rem;
+  color: #c6d5ad;
 }
 
 .nav__logo img {
@@ -259,5 +266,11 @@ li {
     max-height: 24rem;
     justify-content: center;
     margin-bottom: 5rem;
+  }
+}
+
+@media (max-width: 500px) {
+  #box-outer {
+    min-width: 20rem;
   }
 }
